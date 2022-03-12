@@ -1,9 +1,10 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const copyPlugin = require('copy-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-  entry: './js/main.js',
+  entry: './src/main.js',
 
   output: {
     // path: path.resolve(__dirname, 'dist'),
@@ -14,8 +15,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      },
+
+      {
         test: /\.s?css$/,
         use: [
+          'vue-style-loader',
           'style-loader',
           'css-loader',
           'postcss-loader',
@@ -39,7 +46,8 @@ module.exports = {
       patterns: [
         {from: 'static'}
       ]
-    })
+    }),
+    new VueLoaderPlugin()
   ],
 
   devServer: {
