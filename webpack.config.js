@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
-const copyPlugin = require('copy-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
     new HtmlPlugin({
       template: './index.html'
     }),
-    new copyPlugin({
+    new CopyPlugin({
       patterns: [
         {from: 'static'}
       ]

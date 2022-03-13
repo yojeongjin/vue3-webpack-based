@@ -1,28 +1,20 @@
-module.exports = {
-  env: {
-    browser: true,
-    node: true
-  },
-  extends: [
-    'plugin: vue/vue3-strongly-recommended',
-    'eslint: recommended'
-  ],
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
-  rules: {
-      "vue/html-closing-bracket-newline": ["error", {
-      "singleline": "never",
-      "multiline": "never"
-    }],
-    "vue/html-self-closing": ["error", {
-    "html": {
-      "void": "always",
-      "normal": "never",
-      "component": "always"
+module.exports ={
+    "env": {
+        "browser": true,
+        "node": true
     },
-    "svg": "always",
-    "math": "always"
-    }]  
-  }
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/vue3-strongly-recommended"
+    ],
+    "parserOptions": {
+        "parser": "babel-eslint"
+    },
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"]
+    }
 }
