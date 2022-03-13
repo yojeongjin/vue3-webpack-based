@@ -10,11 +10,7 @@ module.exports ={
     "parserOptions": {
         "parser": "babel-eslint"
     },
-    "plugins": [
-        "vue"
-    ],
     "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+        
     }
 }
